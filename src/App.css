@@ -54,4 +54,12 @@ tr {
 
 .card {
   width: 18rem;
+  display: flex;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer ul {
+  list-style: none;
 }
