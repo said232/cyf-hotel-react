@@ -3,33 +3,42 @@ import React, { Component } from "react";
 import Order from "./Order";
 class Restaurant extends Component {
   state = {
-    orders: 0
+    pizzas: 0,
+    salads: 0
   };
-
-  addOrder = () => {
+  addpizza = () => {
     // const previousOrders = this.state.orders
 
     // const newOrders = previousOrders + 1
 
     // this.setState({ orders: newOrders })
-    this.setState(previousState => ({ orders: previousState.orders + 1 }));
+    this.setState(previousState => ({ pizzas: previousState.pizzas + 1 }));
+  };
+  addsalad = () => {
+    // const previousOrders = this.state.orders
+
+    // const newOrders = previousOrders + 1
+
+    // this.setState({ orders: newOrders })
+    this.setState(previousState => ({ salads: previousState.salads + 1 }));
   };
 
   render() {
-    const { orders } = this.state;
+    const { pizzas } = this.state;
+    const { salads } = this.state;
     return (
       <div>
         <h3>Restaurant Orders</h3>
         <ul>
           <Order
             orderType="pizzas"
-            orders={orders}
-            onAddOrder={this.addOrder}
+            orders={pizzas}
+            onAddOrder={this.addpizza}
           />
           <Order
             orderType="Salads"
-            orders={orders}
-            onAddOrder={this.addOrder}
+            orders={salads}
+            onAddOrder={this.addsalad}
           />
         </ul>
       </div>
